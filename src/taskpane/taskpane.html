@@ -1,0 +1,105 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contoso Task Pane Add-in</title>
+
+  <!-- Office JavaScript API -->
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+  <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
+
+  <!-- Template styles -->
+  <link href="taskpane.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+  <section id="sideload-msg" class="ms-welcome__main">
+    <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+  </section>
+  <main id="app-body" class="ms-welcome__main" style="display: none;">
+      <!--<Icon>
+          <bt:Image size="80" resid="Icon.80x80" />
+      </Icon>-->
+      <h2 class="ms-font-xl">NHẬP MÔN XỬ LÝ NGÔN NGỮ TỰ NHIÊN</h2>
+      <h2 class="ms-font-l">Thống kê văn bản Tiếng Việt</h2>
+
+      <div>
+          <button role="button" id="start" class="ms-welcome__action ms-Button ms-Button--hero ms-font-l">Thống kê</button>
+      </div>
+      <h2 class="ms-font-l"> </h2>
+      <table id='vn' class="tftable" border="1" hidden>
+          <tr><th>Giá trị thống kê</th><th>Số lượng</th></tr>
+          <tr><td>Chữ</td><td id='0'></td></tr>
+          <tr><td>Ký tự (bao gồm dấu cách)</td><td id='1'></td></tr>
+          <tr><td>Từ</td><td id='2'></td></tr>
+          <tr><td>Từ phân biệt</td><td id='3'></td></tr>
+          <tr><td>Câu</td><td id='4'></td></tr>
+          <tr><td>Đoạn văn</td><td id='5'></td></tr>
+          <tr><td>Dấu chấm câu</td><td id='6'></td></tr>
+          <tr><td>Số câu trung bình mỗi đoạn văn</td><td id='7'></td></tr>
+          <tr><td>Số từ trung bình mỗi câu</td><td id='8'></td></tr>
+          <tr><td>Số ký tự trung bình mỗi từ</td><td id='9'></td></tr>
+          <tr><td>Âm tiết</td><td id='10'></td></tr>
+      </table>
+
+      <table id='vn' class="tftable" border="1" hidden>
+          <tr>
+              <th>Giá trị thống kê</th>
+              <th>Số lượng</th>
+          </tr>
+          <tr>
+              <td>Chữ</td>
+              <td id='0'></td>
+          </tr>
+          <tr>
+              <td>Ký tự</td>
+              <td id='1'></td>
+          </tr>
+          <tr>
+              <td>Từ</td>
+              <td id='2'></td>
+          </tr>
+          <tr>
+              <td>Câu</td>
+              <td id='3'></td>
+          </tr>
+          <tr>
+              <td>Đoạn văn</td>
+              <td id='4'></td>
+          </tr>
+          <tr>
+              <td>Dấu chấm câu</td>
+              <td id='5'></td>
+          </tr>
+          <tr>
+              <td>Số câu trung bình mỗi đoạn</td>
+              <td id='6'></td>
+          </tr>
+          <tr>
+              <td>Số từ trung bình mỗi câu</td>
+              <td id='7'></td>
+          </tr>
+          <tr>
+              <td>Số ký tự trung bình mỗi từ</td>
+              <td id='8'></td>
+          </tr>
+          <tr>
+              <td>Âm tiết</td>
+              <td id='9'></td>
+          </tr>
+
+      </table>
+  </main>
+</body>
+
+</html>
